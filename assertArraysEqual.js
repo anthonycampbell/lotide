@@ -6,7 +6,7 @@ const eqArrays = function(a1, a2){
   }
   return true
 }
-const assertArrayEqual = function(a1, a2){
-  let v = eqArrays(a1,a2);
-  v? console.log('✅✅✅ arrays are equal') : console.log('🛑🛑🛑 arrays are different');
+const assertArraysEqual = function(a1, a2){
+  let v = eqArrays(a1, a2);
+  v? console.log(`✅✅✅ ${a1} === ${a2}`) : console.log(`🛑🛑🛑 ${a1} !== ${a2}`);
 }
