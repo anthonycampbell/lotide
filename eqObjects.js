@@ -18,8 +18,9 @@ const eqObjects = function(o1, o2) {
   if (Object.keys(o1).length !== Object.keys(o2).length) return false;
   for (let k of Object.keys(o1)) {
     if (Array.isArray(o2[k]) && Array.isArray(o1[k])) {
-      let isArrEqual = eqArrays(o1[k], o2[k]);
-      if (!isArrEqual) return false;
+      if (!eqArrays(o1[k], o2[k])) return false;
+    } else if (typeof o2[k] === 'object' && typeof o1[k] === 'object') {
+      if (!eqObjects(o1[k], o2[k])) return false;
     } else if (o2[k] !== o1[k]) {
       return false;
     }
@@ -39,3 +40,6 @@ assertEqual(eqObjects(o2,o3), false);
 assertEqual(eqObjects(o3,o4), false);
 assertEqual(eqObjects(o5,o6), true);
 assertEqual(eqObjects(o5,o7), false);
+console.log(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => true
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 })); // => false
+console.log(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 })); // => false
