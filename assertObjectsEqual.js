@@ -1,11 +1,4 @@
-const eqArrays = function(a1, a2) {
-  let l = a2.length;
-  if (a1.length > a2.length) l = a1.length;
-  for (let i = 0; i < l; i++) {
-    if (a1[i] !== a2[i]) return false;
-  }
-  return true;
-};
+const eqArrays = require('./assertArraysEqual').eqArrays;
 const eqObjects = function(o1, o2) {
   if (Object.keys(o1).length !== Object.keys(o2).length) return false;
   for (let k of Object.keys(o1)) {
