@@ -1,4 +1,3 @@
-const assertArraysEqual = require('./assertArraysEqual');
 const flatten = function(a) {
   let r = [];
   for (let i = 0; i < a.length; i++) {
@@ -12,7 +11,4 @@ const flatten = function(a) {
   }
   return r;
 };
-
-let a1 = [[1, 2, 3], 4, 5, 6, [7, 8], 9];
-let a2 = flatten(a1);
-assertArraysEqual(a2, [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+module.exports = flatten;
