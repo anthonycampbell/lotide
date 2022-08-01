@@ -1,4 +1,4 @@
-const assertArraysEqual = require('./assertArraysEqual').assertArraysEqual;
+const assertArraysEqual = require('./assertArraysEqual');
 const without = function(arr, rArr) {
   let removes = {};
   let finished = [];

@@ -1,4 +1,4 @@
-const assertArraysEqual = require('./assertArraysEqual').assertArraysEqual;
+const assertArraysEqual = require('./assertArraysEqual');
 const flatten = function(a) {
   let r = [];
   for (let i = 0; i < a.length; i++) {

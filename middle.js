@@ -1,4 +1,4 @@
-const assertArraysEqual = require('./assertArraysEqual').assertArraysEqual;
+const assertArraysEqual = require('./assertArraysEqual');
 const middle = function(array) {
   let r = [];
   let floor = Math.floor(array.length / 2);
