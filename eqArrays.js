@@ -1,4 +1,3 @@
-const assertEqual = require('./assertEqual');
 const eqArrays = function(a1, a2) {
   let l = a1.length;
   if (l !== a2.length) return false;
@@ -9,10 +8,4 @@ const eqArrays = function(a1, a2) {
   }
   return true;
 };
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-assertEqual(eqArrays([1, 2], [1, 2, 1]), false);
-assertEqual(eqArrays([1, 2, 1], [1, 2]), false);
-console.log(eqArrays([[2, 3], [4]], [[2, 3], [4]])); // => true
-console.log(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]])); // => false
-console.log(eqArrays([[2, 3], [4]], [[2, 3], 4])); // => false
+module.exports = eqArrays;
